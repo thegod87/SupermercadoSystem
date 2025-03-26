@@ -1,0 +1,12 @@
+=============COMANDOS GIT ================
+
+git pull origin main 					// Descarga la ultima version del repositorio
+
+
+
+git add .         //para guardar los cambios
+
+git commit -m "Aqui lo que hice"        //Le pone un nombre a tus cambios
+
+git push origin main					//SUbe los cambios al repositorio
+
