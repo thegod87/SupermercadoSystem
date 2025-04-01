@@ -12,22 +12,22 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.border.EmptyBorder;
 import supermercadoSystem.componentes.BotonesPrincipales;
-import power.tech.dao.ClienteDao;
-import power.tech.dao.FuncionarioDao;
+import supermercadoSystem.dao.ClienteDao;
+import supermercadoSystem.dao.FuncionarioDao;
 import power.tech.dao.HabitacionDao;
-import power.tech.dao.PagoDao;
+import supermercadoSystem.dao.PagoDao;
 import power.tech.dao.ReservaDao;
 import power.tech.dao.Reserva_detalleDao;
 import power.tech.soporte.SoporteTecnicoVentana;
-import power.tech.transacciones.InformePagoVentana;
+import supermercadoSystem.transacciones.InformePagoVentana;
 import power.tech.transacciones.InformeReservaVentana;
-import power.tech.transacciones.PagoVentana;
+import supermercadoSystem.transacciones.PagoVentana;
 import power.tech.transacciones.ReservaVentana;
-import power.tech.vista.ClienteVentava;
-import power.tech.vista.FuncionarioVentana;
+import supermercadoSystem.vista.ClienteVentana;
+import supermercadoSystem.vista.FuncionarioVentana;
 import power.tech.vista.HabitacionVentana;
-import power.tech.vista.ListadoClienteVentana;
-import power.tech.vista.ListadoFuncionarioVentana;
+import supermercadoSystem.vista.ListadoClienteVentana;
+import supermercadoSystem.vista.ListadoFuncionarioVentana;
 import power.tech.vista.ListadoHabitacionVentana;
 import supermercadoSystem.componentes.jPanelPantallaPrincipal;
 import java.awt.Insets;
@@ -398,7 +398,7 @@ public class PantallaPrincipal extends JFrame {
 	}
 
 	private void abrirVentanaCliente() {
-		ClienteVentava ventana = new ClienteVentava();
+		ClienteVentana ventana = new ClienteVentana();
 		ventana.setUpControlador();
 		ventana.setVisible(true);
 	}
@@ -455,13 +455,6 @@ public class PantallaPrincipal extends JFrame {
 		InformePagoVentana ventana = new InformePagoVentana();
 		ventana.setUpController();
 		ventana.setVisible(true);
-	}
-
-	private void abrirVentanaSoporteTecnico() {
-		SoporteTecnicoVentana ventana = new SoporteTecnicoVentana();
-		ventana.setUpController();
-		ventana.setVisible(true);
-
 	}
 
 	private void inicializarBaseDatos() {

@@ -10,8 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
-import power.tech.app.PantallaPrincipal;
-import power.tech.vista.ClienteVentava;
+import supermercadoSystem.app.PantallaPrincipal;
+import supermercadoSystem.vista.ClienteVentana;
 import java.awt.Cursor;
 import java.awt.Font;
 import javax.swing.ImageIcon;
@@ -86,7 +86,7 @@ public class VentanaSplash extends JFrame {
 	}
 
 	public static void abrirCliente() {
-		ClienteVentava clienteVentana = new ClienteVentava();
+		ClienteVentana clienteVentana = new ClienteVentana();
 		clienteVentana.setUpControlador();
 	}
 

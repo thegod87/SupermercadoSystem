@@ -2,7 +2,7 @@ package supermercadoSystem.interfaces;
 
 import supermercadoSystem.entidades.Cliente;
 
-public interface InterfaceClientes {
+public interface InterfaceCliente {
 
 	public void seleccionarCliente(Cliente cliente);
 

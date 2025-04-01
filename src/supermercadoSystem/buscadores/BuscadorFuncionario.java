@@ -12,11 +12,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-import py.edu.cursojava.dao.FuncionarioDao;
-import py.edu.cursojava.entidades.Funcionario;
-import py.edu.cursojava.interfaces.InterfaceFuncionario;
-import py.edu.cursojava.tablas.ModeloTablaFuncionario;
+import supermercadoSystem.dao.FuncionarioDao;
+import supermercadoSystem.entidades.Funcionario;
+import supermercadoSystem.interfaces.InterfaceFuncionario;
+import supermercadoSystem.tablas.ModeloTablaFuncionario;
 
+@SuppressWarnings("serial")
 public class BuscadorFuncionario extends JDialog {
 	private JTextField tfBuscador;
 	private JTable table;

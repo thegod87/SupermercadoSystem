@@ -3,13 +3,13 @@ package supermercadoSystem.utilidades;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.KeyEvent;
-import supermercadoSystem.componentes.JtextFielPersonalizado;
+import supermercadoSystem.componentes.jtextFieldPersonalizado;
 
 public class EventosGenericos {
 
 	public static void estadosJtexField(Component component, boolean estado) {
-		if (component instanceof JtextFielPersonalizado) {
-			JtextFielPersonalizado jtextFieldPersonalizado = ((JtextFielPersonalizado) component);
+		if (component instanceof jtextFieldPersonalizado) {
+			jtextFieldPersonalizado jtextFieldPersonalizado = ((jtextFieldPersonalizado) component);
 			jtextFieldPersonalizado.setEnabled(estado);
 		} else {
 			if (component instanceof Container) {
@@ -21,8 +21,8 @@ public class EventosGenericos {
 	}
 
 	public static void limpiarJtexField(Component component) {
-		if (component instanceof JtextFielPersonalizado) {
-			JtextFielPersonalizado jtextFieldPersonalizado = ((JtextFielPersonalizado) component);
+		if (component instanceof jtextFieldPersonalizado) {
+			jtextFieldPersonalizado jtextFieldPersonalizado = ((jtextFieldPersonalizado) component);
 			jtextFieldPersonalizado.setText("");
 			;
 		} else {
