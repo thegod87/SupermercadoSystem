@@ -427,13 +427,13 @@ public class PantallaPrincipal extends JFrame {
 	}
 
 	private void abrirVentanaListadoHabitacion() {
-		ListadoHabitacionVentana ventana = new ListadoHabitacionVentana();
+		ListadoProductoVentana ventana = new ListadoProductoVentana();
 		ventana.setUpController();
 		ventana.setVisible(true);
 	}
 
 	private void abrirVentanaInformeReserva() {
-		InformeReservaVentana ventana = new InformeReservaVentana();
+		InformeVentaVentana ventana = new InformeVentaVentana();
 		ventana.setUpController();
 		ventana.setVisible(true);
 	}

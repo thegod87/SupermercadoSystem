@@ -4,13 +4,14 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import javax.swing.JDialog;
 import javax.swing.JFormattedTextField;
-import supermercadoSystem.componentes.jDialogoGenerico;
+
+import supermercadoSystem.componentes.jDialogGenerico;
+import supermercadoSystem.componentes.jtextFieldPersonalizado;
 import supermercadoSystem.controlador.ClienteController;
 import supermercadoSystem.utilidades.UtilidadesFecha;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
-import supermercadoSystem.componentes.JtextFielPersonalizado;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.Cursor;
@@ -23,16 +24,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
-public class ClienteVentana extends jDialogoGenerico {
+public class ClienteVentana extends jDialogGenerico {
 
 	private JFormattedTextField tfFechaNascimiento;
-	private JtextFielPersonalizado tfSexo;
-	private JtextFielPersonalizado tfTelefono;
-	private JtextFielPersonalizado tfDocumento;
-	private JtextFielPersonalizado tfEmail;
-	private JtextFielPersonalizado tfDireccion;
-	private JtextFielPersonalizado tfApellido;
-	private JtextFielPersonalizado tfNombre;
+	private jtextFieldPersonalizado tfSexo;
+	private jtextFieldPersonalizado tfTelefono;
+	private jtextFieldPersonalizado tfDocumento;
+	private jtextFieldPersonalizado tfEmail;
+	private jtextFieldPersonalizado tfDireccion;
+	private jtextFieldPersonalizado tfApellido;
+	private jtextFieldPersonalizado tfNombre;
 
 	/**
 	 * Launch the application.
@@ -125,7 +126,7 @@ public class ClienteVentana extends jDialogoGenerico {
 		lblFechaDeNascimiento.setBounds(10, 296, 125, 14);
 		getPanelFormulario().add(lblFechaDeNascimiento);
 
-		tfNombre = new JtextFielPersonalizado();
+		tfNombre = new jtextFieldPersonalizado();
 		tfNombre.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent arg0) {
@@ -135,23 +136,23 @@ public class ClienteVentana extends jDialogoGenerico {
 		tfNombre.setBounds(88, 8, 287, 20);
 		getPanelFormulario().add(tfNombre);
 
-		tfApellido = new JtextFielPersonalizado();
+		tfApellido = new jtextFieldPersonalizado();
 		tfApellido.setBounds(88, 48, 287, 20);
 		getPanelFormulario().add(tfApellido);
 
-		tfDireccion = new JtextFielPersonalizado();
+		tfDireccion = new jtextFieldPersonalizado();
 		tfDireccion.setBounds(88, 89, 287, 20);
 		getPanelFormulario().add(tfDireccion);
 
-		tfEmail = new JtextFielPersonalizado();
+		tfEmail = new jtextFieldPersonalizado();
 		tfEmail.setBounds(88, 128, 287, 20);
 		getPanelFormulario().add(tfEmail);
 
-		tfDocumento = new JtextFielPersonalizado();
+		tfDocumento = new jtextFieldPersonalizado();
 		tfDocumento.setBounds(88, 169, 145, 20);
 		getPanelFormulario().add(tfDocumento);
 
-		tfTelefono = new JtextFielPersonalizado();
+		tfTelefono = new jtextFieldPersonalizado();
 		tfTelefono.setBounds(88, 211, 145, 20);
 		getPanelFormulario().add(tfTelefono);
 
@@ -159,7 +160,7 @@ public class ClienteVentana extends jDialogoGenerico {
 		tfFechaNascimiento.setBounds(145, 293, 88, 20);
 		getPanelFormulario().add(tfFechaNascimiento);
 
-		tfSexo = new JtextFielPersonalizado();
+		tfSexo = new jtextFieldPersonalizado();
 		tfSexo.setBounds(88, 253, 145, 20);
 		getPanelFormulario().add(tfSexo);
 
@@ -225,59 +226,59 @@ public class ClienteVentana extends jDialogoGenerico {
 		this.tfFechaNascimiento = tfFechaNascimiento;
 	}
 
-	public JtextFielPersonalizado getTfSexo() {
+	public jtextFieldPersonalizado getTfSexo() {
 		return tfSexo;
 	}
 
-	public void setTfSexo(JtextFielPersonalizado tfSexo) {
+	public void setTfSexo(jtextFieldPersonalizado tfSexo) {
 		this.tfSexo = tfSexo;
 	}
 
-	public JtextFielPersonalizado getTfTelefono() {
+	public jtextFieldPersonalizado getTfTelefono() {
 		return tfTelefono;
 	}
 
-	public void setTfTelefono(JtextFielPersonalizado tfTelefono) {
+	public void setTfTelefono(jtextFieldPersonalizado tfTelefono) {
 		this.tfTelefono = tfTelefono;
 	}
 
-	public JtextFielPersonalizado getTfDocumento() {
+	public jtextFieldPersonalizado getTfDocumento() {
 		return tfDocumento;
 	}
 
-	public void setTfDocumento(JtextFielPersonalizado tfDocumento) {
+	public void setTfDocumento(jtextFieldPersonalizado tfDocumento) {
 		this.tfDocumento = tfDocumento;
 	}
 
-	public JtextFielPersonalizado getTfEmail() {
+	public jtextFieldPersonalizado getTfEmail() {
 		return tfEmail;
 	}
 
-	public void setTfEmail(JtextFielPersonalizado tfEmail) {
+	public void setTfEmail(jtextFieldPersonalizado tfEmail) {
 		this.tfEmail = tfEmail;
 	}
 
-	public JtextFielPersonalizado getTfDireccion() {
+	public jtextFieldPersonalizado getTfDireccion() {
 		return tfDireccion;
 	}
 
-	public void setTfDireccion(JtextFielPersonalizado tfDireccion) {
+	public void setTfDireccion(jtextFieldPersonalizado tfDireccion) {
 		this.tfDireccion = tfDireccion;
 	}
 
-	public JtextFielPersonalizado getTfApellido() {
+	public jtextFieldPersonalizado getTfApellido() {
 		return tfApellido;
 	}
 
-	public void setTfApellido(JtextFielPersonalizado tfApellido) {
+	public void setTfApellido(jtextFieldPersonalizado tfApellido) {
 		this.tfApellido = tfApellido;
 	}
 
-	public JtextFielPersonalizado getTfNombre() {
+	public jtextFieldPersonalizado getTfNombre() {
 		return tfNombre;
 	}
 
-	public void setTfNombre(JtextFielPersonalizado tfNombre) {
+	public void setTfNombre(jtextFieldPersonalizado tfNombre) {
 		this.tfNombre = tfNombre;
 	}
 }

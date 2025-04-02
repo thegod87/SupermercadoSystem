@@ -40,37 +40,37 @@ public class CategoriaVentana extends jDialogGenerico {
 	public CategoriaVentana() {
 		setTitle("Categorias");
 		getLblTitulo().setText("Registros de Categorias");
-		getjPanelFormulario().setLayout(null);
+		getPanelFormulario().setLayout(null);
 		
 		JLabel lblCdigo = new JLabel("C\u00F3digo:");
 		lblCdigo.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblCdigo.setBounds(12, 39, 86, 16);
-		getjPanelFormulario().add(lblCdigo);
+		getPanelFormulario().add(lblCdigo);
 		
 		JLabel lblDescripcin = new JLabel("Descripci\u00F3n:");
 		lblDescripcin.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDescripcin.setBounds(12, 132, 86, 16);
-		getjPanelFormulario().add(lblDescripcin);
+		getPanelFormulario().add(lblDescripcin);
 		
 		JLabel lblEstado = new JLabel("Estado:");
 		lblEstado.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblEstado.setBounds(12, 216, 86, 16);
-		getjPanelFormulario().add(lblEstado);
+		getPanelFormulario().add(lblEstado);
 		
-		tfId = new JtextFieldPersonalizado();
+		tfId = new jtextFieldPersonalizado();
 		tfId.setEditable(false);
 		tfId.setBounds(110, 36, 86, 22);
-		getjPanelFormulario().add(tfId);
+		getPanelFormulario().add(tfId);
 		tfId.setColumns(10);
 		
-		tfDescripcion = new JtextFieldPersonalizado();
+		tfDescripcion = new jtextFieldPersonalizado();
 		tfDescripcion.setColumns(10);
 		tfDescripcion.setBounds(110, 131, 278, 22);
-		getjPanelFormulario().add(tfDescripcion);
+		getPanelFormulario().add(tfDescripcion);
 		
 		cbEstado = new JCheckBox("Activo");
 		cbEstado.setBounds(110, 212, 113, 25);
-		getjPanelFormulario().add(cbEstado);
+		getPanelFormulario().add(cbEstado);
 		
 	}
 
