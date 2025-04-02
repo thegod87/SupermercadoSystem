@@ -13,7 +13,7 @@
 
 		<!-- Datos para la conexion de la Base de datos -->
 		<property name="hibernate.connection.url">
-			jdbc:postgresql://localhost:5432/powertech_db
+			jdbc:postgresql://localhost:5432/supermercado_db
 		</property>
 		<property name="hibernate.connection.username">
 			postgres
@@ -31,7 +31,7 @@
 		<!-- Lista de mapeo de clases -->
 		<mapping class="power.tech.entidades.Cliente" />
 		<mapping class="power.tech.entidades.Funcionario" />
-		<mapping class="power.tech.entidades.Habitacion" />
+		<mapping class="power.tech.entidades." />
 		<mapping class="power.tech.entidades.Pago" />
 		<mapping class="power.tech.entidades.Reserva_detalle" />
 		<mapping class="power.tech.entidades.Reserva" />
