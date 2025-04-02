@@ -181,7 +181,6 @@ public class ClienteController implements InterfaceAcciones, FocusListener {
 		cliente.setCorreo(this.ventana.getTfEmail().getText());
 		cliente.setDocumento(this.ventana.getTfDocumento().getText());
 		cliente.setTelefono(this.ventana.getTfTelefono().getText());
-		cliente.setSexo(this.ventana.getTfSexo().getText());
 		cliente.setFecha_nascimiento(UtilidadesFecha.stringAFecha(this.ventana.getTfFechaNascimiento().getText()));
 	}
 
@@ -196,7 +195,6 @@ public class ClienteController implements InterfaceAcciones, FocusListener {
 		ventana.getTfDocumento().setText(cliente.getDocumento());
 		ventana.getTfTelefono().setText(cliente.getTelefono());
 		ventana.getTfFechaNascimiento().setText(UtilidadesFecha.fechaAString(cliente.getFecha_nascimiento()));
-		ventana.getTfSexo().setText(cliente.getSexo());
 
 		ventana.getBtnNuevo().setEnabled(false);
 		ventana.getBtnSalir().setEnabled(true);

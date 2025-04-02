@@ -14,21 +14,8 @@ import javax.swing.border.EmptyBorder;
 import supermercadoSystem.componentes.BotonesPrincipales;
 import supermercadoSystem.dao.ClienteDao;
 import supermercadoSystem.dao.FuncionarioDao;
-import supermercadoSystem.dao.HabitacionDao;
-import supermercadoSystem.dao.PagoDao;
-import supermercadoSystem.dao.ReservaDao;
-import supermercadoSystem.dao.Reserva_detalleDao;
-import supermercadoSystem.soporte.SoporteTecnicoVentana;
-import supermercadoSystem.transacciones.InformePagoVentana;
-import supermercadoSystem.transacciones.InformeReservaVentana;
-import supermercadoSystem.transacciones.PagoVentana;
-import supermercadoSystem.transacciones.ReservaVentana;
-import supermercadoSystem.vista.ClienteVentava;
+import supermercadoSystem.vista.ClienteVentana;
 import supermercadoSystem.vista.FuncionarioVentana;
-import supermercadoSystem.vista.HabitacionVentana;
-import supermercadoSystem.vista.ListadoClienteVentana;
-import supermercadoSystem.vista.ListadoFuncionarioVentana;
-import supermercadoSystem.vista.ListadoHabitacionVentana;
 import supermercadoSystem.componentes.jPanelPantallaPrincipal;
 import java.awt.Insets;
 import javax.swing.ImageIcon;
@@ -398,7 +385,7 @@ public class PantallaPrincipal extends JFrame {
 	}
 
 	private void abrirVentanaCliente() {
-		ClienteVentava ventana = new ClienteVentava();
+		ClienteVentana ventana = new ClienteVentana();
 		ventana.setUpControlador();
 		ventana.setVisible(true);
 	}
@@ -410,13 +397,13 @@ public class PantallaPrincipal extends JFrame {
 	}
 
 	private void abrirVentanaHabitacion() {
-		HabitacionVentana ventana = new HabitacionVentana();
+		ProductoVentana ventana = new ProductoVentana();
 		ventana.setUpControlador();
 		ventana.setVisible(true);
 	}
 
 	private void abrirVentanaReserva() {
-		ReservaVentana ventana = new ReservaVentana();
+		VentaVentana ventana = new VentaVentana();
 		ventana.setUpController();
 		ventana.setVisible(true);
 	}
@@ -455,13 +442,6 @@ public class PantallaPrincipal extends JFrame {
 		InformePagoVentana ventana = new InformePagoVentana();
 		ventana.setUpController();
 		ventana.setVisible(true);
-	}
-
-	private void abrirVentanaSoporteTecnico() {
-		SoporteTecnicoVentana ventana = new SoporteTecnicoVentana();
-		ventana.setUpController();
-		ventana.setVisible(true);
-
 	}
 
 	private void inicializarBaseDatos() {

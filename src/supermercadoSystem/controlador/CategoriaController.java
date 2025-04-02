@@ -5,15 +5,13 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
-
 import javax.swing.JOptionPane;
-
-import py.edu.cursojava.dao.CategoriaDao;
-import py.edu.cursojava.entidades.Categoria;
-import py.edu.cursojava.interfaces.InterfaceAcciones;
-import py.edu.cursojava.tablas.ModeloTablaCategoria;
-import py.edu.cursojava.utilidades.EventosGenericos;
-import py.edu.cursojava.vistas.CategoriaVentana;
+import supermercadoSystem.dao.CategoriaDao;
+import supermercadoSystem.entidades.Categoria;
+import supermercadoSystem.interfaces.InterfaceAcciones;
+import supermercadoSystem.tablas.ModeloTablaCategoria;
+import supermercadoSystem.utilidades.EventosGenericos;
+import supermercadoSystem.vista.CategoriaVentana;
 
 public class CategoriaController implements InterfaceAcciones{
 	private Categoria categoria;

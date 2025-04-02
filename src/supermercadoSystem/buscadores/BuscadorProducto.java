@@ -6,17 +6,16 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
-
 import javax.swing.JDialog;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import supermercadoSystem.dao.ProductoDao;
+import supermercadoSystem.entidades.Producto;
+import supermercadoSystem.interfaces.InterfaceProducto;
+import supermercadoSystem.tablas.ModeloTablaProducto;
 
-import py.edu.cursojava.dao.ProductoDao;
-import py.edu.cursojava.entidades.Producto;
-import py.edu.cursojava.interfaces.InterfaceProducto;
-import py.edu.cursojava.tablas.ModeloTablaProducto;
-
+@SuppressWarnings("serial")
 public class BuscadorProducto extends JDialog {
 	private JTextField tfBuscador;
 	private JTable table;

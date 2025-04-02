@@ -13,13 +13,13 @@ import javax.swing.JToolBar;
 import supermercadoSystem.interfaces.InterfaceAcciones;
 
 @SuppressWarnings("serial")
-public class jDialogoGenerico extends JDialog implements ActionListener {
+public class jDialogGenerico extends JDialog implements ActionListener {
 	private BotonesJtoolsbarPersonalizados btnNuevo;
 	private BotonesJtoolsbarPersonalizados btnModificar;
 	private BotonesJtoolsbarPersonalizados btnEliminar;
 	private BotonesJtoolsbarPersonalizados btnCancelar;
 	private JPanel PanelFormulario;
-	private JtextFielPersonalizado tfBuscador;
+	private jtextFieldPersonalizado tfBuscador;
 	private JLabel lblTitulo;
 	private InterfaceAcciones interfaceAcciones;
 	private JTable table;
@@ -39,7 +39,7 @@ public class jDialogoGenerico extends JDialog implements ActionListener {
 	/**
 	 * Create the dialog.
 	 */
-	public jDialogoGenerico() {
+	public jDialogGenerico() {
 		setBounds(100, 100, 900, 650);
 		setResizable(false);
 		setLocationRelativeTo(this);
@@ -86,7 +86,7 @@ public class jDialogoGenerico extends JDialog implements ActionListener {
 		lblBuscar.setBounds(435, 80, 49, 14);
 		getContentPane().add(lblBuscar);
 
-		tfBuscador = new JtextFielPersonalizado();
+		tfBuscador = new jtextFieldPersonalizado();
 		tfBuscador.setBounds(494, 78, 381, 20);
 		getContentPane().add(tfBuscador);
 
@@ -214,11 +214,11 @@ public class jDialogoGenerico extends JDialog implements ActionListener {
 		PanelFormulario = panelFormulario;
 	}
 
-	public JtextFielPersonalizado getTfBuscador() {
+	public jtextFieldPersonalizado getTfBuscador() {
 		return tfBuscador;
 	}
 
-	public void setTfBuscador(JtextFielPersonalizado tfBuscador) {
+	public void setTfBuscador(jtextFieldPersonalizado tfBuscador) {
 		this.tfBuscador = tfBuscador;
 	}
 

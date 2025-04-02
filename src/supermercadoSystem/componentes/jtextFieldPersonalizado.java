@@ -7,9 +7,9 @@ import java.awt.event.KeyEvent;
 import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
-public class JtextFielPersonalizado extends JTextField {
+public class jtextFieldPersonalizado extends JTextField {
 
-	public JtextFielPersonalizado() {
+	public jtextFieldPersonalizado() {
 		setFont(new Font("Tahoma", Font.BOLD, 11));
 		setDisabledTextColor(Color.GRAY);
 	}
