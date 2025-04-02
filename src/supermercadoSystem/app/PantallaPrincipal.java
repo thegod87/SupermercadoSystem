@@ -12,23 +12,23 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.border.EmptyBorder;
 import supermercadoSystem.componentes.BotonesPrincipales;
-import power.tech.dao.ClienteDao;
-import power.tech.dao.FuncionarioDao;
-import power.tech.dao.HabitacionDao;
-import power.tech.dao.PagoDao;
-import power.tech.dao.ReservaDao;
-import power.tech.dao.Reserva_detalleDao;
-import power.tech.soporte.SoporteTecnicoVentana;
-import power.tech.transacciones.InformePagoVentana;
-import power.tech.transacciones.InformeReservaVentana;
-import power.tech.transacciones.PagoVentana;
-import power.tech.transacciones.ReservaVentana;
-import power.tech.vista.ClienteVentava;
-import power.tech.vista.FuncionarioVentana;
-import power.tech.vista.HabitacionVentana;
-import power.tech.vista.ListadoClienteVentana;
-import power.tech.vista.ListadoFuncionarioVentana;
-import power.tech.vista.ListadoHabitacionVentana;
+import supermercadoSystem.dao.ClienteDao;
+import supermercadoSystem.dao.FuncionarioDao;
+import supermercadoSystem.dao.HabitacionDao;
+import supermercadoSystem.dao.PagoDao;
+import supermercadoSystem.dao.ReservaDao;
+import supermercadoSystem.dao.Reserva_detalleDao;
+import supermercadoSystem.soporte.SoporteTecnicoVentana;
+import supermercadoSystem.transacciones.InformePagoVentana;
+import supermercadoSystem.transacciones.InformeReservaVentana;
+import supermercadoSystem.transacciones.PagoVentana;
+import supermercadoSystem.transacciones.ReservaVentana;
+import supermercadoSystem.vista.ClienteVentava;
+import supermercadoSystem.vista.FuncionarioVentana;
+import supermercadoSystem.vista.HabitacionVentana;
+import supermercadoSystem.vista.ListadoClienteVentana;
+import supermercadoSystem.vista.ListadoFuncionarioVentana;
+import supermercadoSystem.vista.ListadoHabitacionVentana;
 import supermercadoSystem.componentes.jPanelPantallaPrincipal;
 import java.awt.Insets;
 import javax.swing.ImageIcon;
@@ -91,7 +91,7 @@ public class PantallaPrincipal extends JFrame {
 		setMaximumSize(new Dimension(1080, 720));
 		setExtendedState(MAXIMIZED_BOTH);
 
-		setTitle("PowerTech System");
+		setTitle("SupermercadoSystem");
 
 		menuBar = new JMenuBar();
 		menuBar.setMargin(new Insets(0, 80, 0, 0));
@@ -107,7 +107,7 @@ public class PantallaPrincipal extends JFrame {
 		mnRegistros.setIconTextGap(40);
 		mnRegistros.setPreferredSize(new Dimension(272, 25));
 		mnRegistros.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		mnRegistros.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/power/tech/img/registros.png")));
+		mnRegistros.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/registros.png")));
 		mnRegistros.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		menuBar.add(mnRegistros);
 
@@ -163,7 +163,7 @@ public class PantallaPrincipal extends JFrame {
 		mnMovimientos.setPreferredSize(new Dimension(272, 22));
 		mnMovimientos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnMovimientos.setHorizontalAlignment(SwingConstants.TRAILING);
-		mnMovimientos.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/power/tech/img/movimientos.png")));
+		mnMovimientos.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/movimientos.png")));
 		mnMovimientos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		menuBar.add(mnMovimientos);
 
@@ -204,7 +204,7 @@ public class PantallaPrincipal extends JFrame {
 		mnListados.setMargin(new Insets(0, 80, 0, 0));
 		mnListados.setPreferredSize(new Dimension(272, 22));
 		mnListados.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		mnListados.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/power/tech/img/listados.png")));
+		mnListados.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/listados.png")));
 		mnListados.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		menuBar.add(mnListados);
 
@@ -261,7 +261,7 @@ public class PantallaPrincipal extends JFrame {
 		mnInformes.setPreferredSize(new Dimension(272, 30));
 		mnInformes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnInformes.setHorizontalAlignment(SwingConstants.TRAILING);
-		mnInformes.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/power/tech/img/informes.png")));
+		mnInformes.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/informes.png")));
 		mnInformes.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		menuBar.add(mnInformes);
 
@@ -302,7 +302,7 @@ public class PantallaPrincipal extends JFrame {
 		mnUtilidades.setPreferredSize(new Dimension(272, 22));
 		mnUtilidades.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnUtilidades.setHorizontalAlignment(SwingConstants.TRAILING);
-		mnUtilidades.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/power/tech/img/utilidades.png")));
+		mnUtilidades.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/utilidades.png")));
 		mnUtilidades.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		menuBar.add(mnUtilidades);
 
@@ -352,7 +352,7 @@ public class PantallaPrincipal extends JFrame {
 
 		JButton btnsprncplsSalir = new JButton();
 		btnsprncplsSalir
-				.setIcon(new ImageIcon(PantallaPrincipal.class.getClass().getResource("/power/tech/img/cerrar.png")));
+				.setIcon(new ImageIcon(PantallaPrincipal.class.getClass().getResource("/supermercadoSystem/img/cerrar.png")));
 		btnsprncplsSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnsprncplsSalir.setSize(130, 70);
 		btnsprncplsSalir.setForeground(Color.BLACK);

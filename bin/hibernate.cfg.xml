@@ -13,13 +13,13 @@
 
 		<!-- Datos para la conexion de la Base de datos -->
 		<property name="hibernate.connection.url">
-			jdbc:postgresql://localhost:5432/powertech_db
+			jdbc:postgresql://localhost:5432/supermercado_db
 		</property>
 		<property name="hibernate.connection.username">
 			postgres
 		</property>
 		<property name="hibernate.connection.password">
-			Switchhack9090
+			1234
 		</property>
 
 		<property name="hibernate.current_session_context_class">thread</property>
@@ -29,11 +29,12 @@
 		<property name="show_sql">true</property>
 
 		<!-- Lista de mapeo de clases -->
-		<mapping class="power.tech.entidades.Cliente" />
-		<mapping class="power.tech.entidades.Funcionario" />
-		<mapping class="power.tech.entidades.Habitacion" />
-		<mapping class="power.tech.entidades.Pago" />
-		<mapping class="power.tech.entidades.Reserva_detalle" />
-		<mapping class="power.tech.entidades.Reserva" />
+		<mapping class="supermercadoSystem.entidades.Categoria" />
+		<mapping class="supermercadoSystem.entidades.Cliente" />
+		<mapping class="supermercadoSystem.entidades.Funcionario" />
+		<mapping class="supermercadoSystem.entidades.Pago" />
+		<mapping class="supermercadoSystem.entidades.Producto" />
+		<mapping class="supermercadoSystem.entidades.Venta" />
+	    <mapping class="supermercadoSystem.entidades.VentaDetalle" />
 	</session-factory>
 </hibernate-configuration>

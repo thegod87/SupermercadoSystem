@@ -13,7 +13,7 @@ public class jPanelPantallaPrincipal extends JPanel {
 
 //	URL url = getClass().getResource("/power/tech/img/powertech.png/");
 	
-	URL url = jPanelPantallaPrincipal.class.getClass().getResource("/power/tech/img/powertech.png");
+	URL url = jPanelPantallaPrincipal.class.getClass().getResource("/supermercadoSystem/img/powertech.png");
 	Image image = new ImageIcon(url).getImage();
 
 	public void paintComponent(Graphics g) {

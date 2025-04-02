@@ -1,29 +1,24 @@
 package supermercadoSystem.vista;
 
-import java.awt.Color;
 import java.awt.EventQueue;
 import javax.swing.JDialog;
 import javax.swing.JFormattedTextField;
-import supermercadoSystem.componentes.jDialogoGenerico;
-import supermercadoSystem.controlador.ClienteController;
-import supermercadoSystem.utilidades.UtilidadesFecha;
+import power.tech.componentes.jDialogoGenerico;
+import power.tech.controlador.FuncionarioController;
+import power.tech.utilidades.UtilidadesFecha;
 import java.awt.Font;
 import javax.swing.JLabel;
+import power.tech.componentes.JtextFielPersonalizado;
+import javax.swing.JCheckBox;
 import javax.swing.border.LineBorder;
-import supermercadoSystem.componentes.JtextFielPersonalizado;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Dimension;
-
 import javax.swing.ImageIcon;
 import javax.swing.JSeparator;
 import java.awt.SystemColor;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
-public class ClienteVentana extends jDialogoGenerico {
+public class FuncionarioVentana extends jDialogoGenerico {
 
 	private JFormattedTextField tfFechaNascimiento;
 	private JtextFielPersonalizado tfSexo;
@@ -33,6 +28,7 @@ public class ClienteVentana extends jDialogoGenerico {
 	private JtextFielPersonalizado tfDireccion;
 	private JtextFielPersonalizado tfApellido;
 	private JtextFielPersonalizado tfNombre;
+	private JCheckBox chEstado;
 
 	/**
 	 * Launch the application.
@@ -41,7 +37,7 @@ public class ClienteVentana extends jDialogoGenerico {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ClienteVentana dialog = new ClienteVentana();
+					FuncionarioVentana dialog = new FuncionarioVentana();
 					dialog.setUpControlador();
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
@@ -53,23 +49,18 @@ public class ClienteVentana extends jDialogoGenerico {
 	}
 
 	public void setUpControlador() {
-		new ClienteController(this);
+		new FuncionarioController(this);
 	}
 
 	/**
 	 * Create the dialog.
 	 */
-	public ClienteVentana() {
-		
-		getToolBar_2().setBounds(20, 0, -2, 77);
+	@SuppressWarnings({})
+	public FuncionarioVentana() {
 		getToolBar_2().setVisible(false);
-		getBtnNuevo().addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		getLblTitulo().setFont(new Font("Times New Roman", Font.BOLD, 34));
 		getLblTitulo().setIconTextGap(10);
-		getLblTitulo().setIcon(new ImageIcon(ClienteVentana.class.getResource("/power/tech/img/registroclientes.png")));
+		getLblTitulo()
+				.setIcon(new ImageIcon(FuncionarioVentana.class.getResource("/power/tech/img/registroclientes.png")));
 		getBtnSalir().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		getBtnGuardar().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		getBtnCancelar().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -77,12 +68,15 @@ public class ClienteVentana extends jDialogoGenerico {
 		getBtnModificar().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		getBtnNuevo().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		getScrollPane().setViewportBorder(new LineBorder(Color.GRAY));
-		setTitle("Registro de Clientes");
+		setTitle("Registro de Funcionarios");
 		getBtnEliminar().setLocation(226, 575);
-		getBtnCancelar().setLocation(358, 504);
-		getPanelFormulario().setBounds(14, 131, 411, 327);
-		getLblTitulo().setBounds(282, 21, 361, 37);
-		getLblTitulo().setText("Registro de Clientes");
+		getBtnCancelar().setLocation(310, 519);
+		getBtnGuardar().setLocation(467, 519);
+		getBtnSalir().setLocation(678, 519);
+		getPanelFormulario().setBounds(14, 127, 411, 361);
+		getLblTitulo().setFont(new Font("Times New Roman", Font.BOLD, 34));
+		getLblTitulo().setBounds(239, 21, 430, 37);
+		getLblTitulo().setText("Registro de Funcionarios");
 		getPanelFormulario().setLayout(null);
 
 		JLabel lblNewLabel_1 = new JLabel("Nombre:");
@@ -126,12 +120,6 @@ public class ClienteVentana extends jDialogoGenerico {
 		getPanelFormulario().add(lblFechaDeNascimiento);
 
 		tfNombre = new JtextFielPersonalizado();
-		tfNombre.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent arg0) {
-				tfNombre.setBorder(new LineBorder(Color.gray));
-			}
-		});
 		tfNombre.setBounds(88, 8, 287, 20);
 		getPanelFormulario().add(tfNombre);
 
@@ -163,6 +151,16 @@ public class ClienteVentana extends jDialogoGenerico {
 		tfSexo.setBounds(88, 253, 145, 20);
 		getPanelFormulario().add(tfSexo);
 
+		JLabel lblEstado = new JLabel("Estado:");
+		lblEstado.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblEstado.setBounds(39, 329, 41, 14);
+		getPanelFormulario().add(lblEstado);
+
+		chEstado = new JCheckBox("Activo");
+		chEstado.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		chEstado.setBounds(90, 325, 97, 23);
+		getPanelFormulario().add(chEstado);
+
 		JLabel label = new JLabel("*");
 		label.setFont(new Font("Tahoma", Font.BOLD, 11));
 		label.setBounds(378, 11, 23, 14);
@@ -175,18 +173,18 @@ public class ClienteVentana extends jDialogoGenerico {
 
 		JLabel label_2 = new JLabel("*");
 		label_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_2.setBounds(237, 172, 23, 14);
+		label_2.setBounds(238, 172, 22, 14);
 		getPanelFormulario().add(label_2);
 
 		JLabel label_3 = new JLabel("*");
 		label_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_3.setBounds(237, 214, 23, 14);
+		label_3.setBounds(238, 214, 22, 14);
 		getPanelFormulario().add(label_3);
 
-		JLabel label_4 = new JLabel("*");
-		label_4.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_4.setBounds(237, 296, 23, 14);
-		getPanelFormulario().add(label_4);
+		JLabel label_5 = new JLabel("*");
+		label_5.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_5.setBounds(238, 296, 23, 14);
+		getPanelFormulario().add(label_5);
 
 		JLabel lblIngreseLosDatos = new JLabel("Ingrese los datos aqui:");
 		lblIngreseLosDatos.setFont(new Font("Times New Roman", Font.BOLD, 18));
@@ -194,19 +192,19 @@ public class ClienteVentana extends jDialogoGenerico {
 		getContentPane().add(lblIngreseLosDatos);
 
 		JSeparator separator = new JSeparator();
-		separator.setBounds(30, 107, 380, 13);
+		separator.setBounds(30, 499, 381, 14);
 		getContentPane().add(separator);
 
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(25, 499, 380, 13);
+		separator_1.setBounds(30, 106, 381, 14);
 		getContentPane().add(separator_1);
 
-		JLabel label_5 = new JLabel("PowerTech");
-		label_5.setForeground(Color.GREEN);
-		label_5.setFont(new Font("Source Sans Pro Light", Font.BOLD, 14));
-		label_5.setBackground(SystemColor.inactiveCaptionBorder);
-		label_5.setBounds(803, 11, 89, 14);
-		getContentPane().add(label_5);
+		JLabel label_4 = new JLabel("PowerTech");
+		label_4.setForeground(Color.GREEN);
+		label_4.setFont(new Font("Source Sans Pro Light", Font.BOLD, 14));
+		label_4.setBackground(SystemColor.inactiveCaptionBorder);
+		label_4.setBounds(803, 11, 72, 14);
+		getContentPane().add(label_4);
 
 		JLabel label_6 = new JLabel("System");
 		label_6.setForeground(Color.GRAY);
@@ -280,4 +278,13 @@ public class ClienteVentana extends jDialogoGenerico {
 	public void setTfNombre(JtextFielPersonalizado tfNombre) {
 		this.tfNombre = tfNombre;
 	}
+
+	public JCheckBox getChEstado() {
+		return chEstado;
+	}
+
+	public void setChEstado(JCheckBox chEstado) {
+		this.chEstado = chEstado;
+	}
+
 }

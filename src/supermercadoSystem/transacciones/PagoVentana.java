@@ -103,7 +103,7 @@ public class PagoVentana extends JDialog {
 		panel.add(tfFechaDePago);
 
 		btnNumeroDeReserva = new JButton("");
-		btnNumeroDeReserva.setIcon(new ImageIcon(PagoVentana.class.getResource("/power/tech/img/pesquisar.png")));
+		btnNumeroDeReserva.setIcon(new ImageIcon(PagoVentana.class.getResource("/supermercadoSystem/img/pesquisar.png")));
 		btnNumeroDeReserva.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNumeroDeReserva.setBounds(188, 11, 63, 20);
 		panel.add(btnNumeroDeReserva);
@@ -143,13 +143,13 @@ public class PagoVentana extends JDialog {
 
 		btnNumeroDePago = new JButton("");
 		btnNumeroDePago.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnNumeroDePago.setIcon(new ImageIcon(PagoVentana.class.getResource("/power/tech/img/pesquisar.png")));
+		btnNumeroDePago.setIcon(new ImageIcon(PagoVentana.class.getResource("/supermercadoSystem/img/pesquisar.png")));
 		btnNumeroDePago.setBounds(748, 9, 63, 20);
 		panel.add(btnNumeroDePago);
 
 		JLabel lblNewLabel = new JLabel("Pagos de Reservas");
 		lblNewLabel.setIconTextGap(10);
-		lblNewLabel.setIcon(new ImageIcon(PagoVentana.class.getResource("/power/tech/img/pagostransacciones.png")));
+		lblNewLabel.setIcon(new ImageIcon(PagoVentana.class.getResource("/supermercadoSystem/img/pagostransacciones.png")));
 		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 34));
 		lblNewLabel.setBounds(274, 23, 324, 50);
 		contentPanel.add(lblNewLabel);
@@ -205,7 +205,7 @@ public class PagoVentana extends JDialog {
 		});
 		toolBar.add(btnProcesar);
 		btnProcesar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnProcesar.setIcon(new ImageIcon(PagoVentana.class.getResource("/power/tech/img/procesar.png")));
+		btnProcesar.setIcon(new ImageIcon(PagoVentana.class.getResource("/supermercadoSystem/img/procesar.png")));
 		btnProcesar.setText("Procesar");
 
 		btnAnular = new BotonesJtoolsbarPersonalizados2();
