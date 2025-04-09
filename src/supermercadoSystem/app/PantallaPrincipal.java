@@ -314,11 +314,6 @@ public class PantallaPrincipal extends JFrame {
 		mntmSoporteTecnico.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		mntmSoporteTecnico.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		mnUtilidades.add(mntmSoporteTecnico);
-		mntmSoporteTecnico.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				abrirVentanaSoporteTecnico();
-			}
-		});
 
 		contentPane = new jPanelPantallaPrincipal();
 		contentPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));

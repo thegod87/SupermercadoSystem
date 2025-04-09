@@ -8,6 +8,7 @@ import javax.swing.SwingConstants;
 import supermercadoSystem.componentes.jDialogGenerico;
 import supermercadoSystem.componentes.jtextFieldPersonalizado;
 import supermercadoSystem.controlador.CategoriaController;
+import java.awt.Font;
 
 public class CategoriaVentana extends jDialogGenerico {
 
@@ -38,6 +39,10 @@ public class CategoriaVentana extends jDialogGenerico {
 	 * Create the dialog.
 	 */
 	public CategoriaVentana() {
+		getLblTitulo().setFont(new Font("Tahoma", Font.PLAIN, 28));
+		getLblBuscar().setBounds(435, 80, 57, 14);
+		getTfBuscador().setBounds(486, 78, 389, 20);
+		getLblTitulo().setBounds(287, 26, 314, 41);
 		setTitle("Categorias");
 		getLblTitulo().setText("Registros de Categorias");
 		getPanelFormulario().setLayout(null);

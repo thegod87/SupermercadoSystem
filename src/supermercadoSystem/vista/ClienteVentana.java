@@ -70,7 +70,7 @@ public class ClienteVentana extends jDialogGenerico {
 		});
 		getLblTitulo().setFont(new Font("Times New Roman", Font.BOLD, 34));
 		getLblTitulo().setIconTextGap(10);
-		getLblTitulo().setIcon(new ImageIcon(ClienteVentana.class.getResource("/power/tech/img/registroclientes.png")));
+		getLblTitulo().setIcon(new ImageIcon(ClienteVentana.class.getResource("/supermercadoSystem/img/registroclientes.png")));
 		getBtnSalir().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		getBtnGuardar().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		getBtnCancelar().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));

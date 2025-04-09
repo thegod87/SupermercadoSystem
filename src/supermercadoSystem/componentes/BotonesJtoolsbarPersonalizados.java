@@ -27,7 +27,7 @@ public class BotonesJtoolsbarPersonalizados extends JButton {
 
 	public void setIcon(String nombreIcono) {
 		try {
-			URL url = BotonesPrincipales.class.getResource("/power/tech/img/" + nombreIcono.toLowerCase() + ".png");
+			URL url = BotonesPrincipales.class.getResource("/supermercadoSystem/img/" + nombreIcono.toLowerCase() + ".png");
 			setIcon(new ImageIcon(url));
 		} catch (Exception e) {
 			e.printStackTrace();

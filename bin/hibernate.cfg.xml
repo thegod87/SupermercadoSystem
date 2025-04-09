@@ -29,7 +29,6 @@
 		<property name="show_sql">true</property>
 
 		<!-- Lista de mapeo de clases -->
-<<<<<<< HEAD
 		<mapping class="supermercadoSystem.entidades.Categoria" />
 		<mapping class="supermercadoSystem.entidades.Cliente" />
 		<mapping class="supermercadoSystem.entidades.Funcionario" />
@@ -37,13 +36,5 @@
 		<mapping class="supermercadoSystem.entidades.Producto" />
 		<mapping class="supermercadoSystem.entidades.Venta" />
 	    <mapping class="supermercadoSystem.entidades.VentaDetalle" />
-=======
-		<mapping class="power.tech.entidades.Cliente" />
-		<mapping class="power.tech.entidades.Funcionario" />
-		<mapping class="power.tech.entidades." />
-		<mapping class="power.tech.entidades.Pago" />
-		<mapping class="power.tech.entidades.Reserva_detalle" />
-		<mapping class="power.tech.entidades.Reserva" />
->>>>>>> 7be5c24e801b478282bb1cbfddae7e7e37646fbb
 	</session-factory>
 </hibernate-configuration>
