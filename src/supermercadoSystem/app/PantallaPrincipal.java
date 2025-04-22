@@ -28,6 +28,7 @@ import java.awt.Cursor;
 import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import java.awt.event.InputEvent;
+import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class PantallaPrincipal extends JFrame {
@@ -50,7 +51,6 @@ public class PantallaPrincipal extends JFrame {
 	private JMenuItem mntmReservas;
 	private JMenuItem mntmPagos;
 	private JMenuItem mntmInicializacionDeDatos;
-	private JMenuItem mntmSoporteTecnico;
 
 	/**
 	 * Launch the application.
@@ -78,7 +78,7 @@ public class PantallaPrincipal extends JFrame {
 		setMaximumSize(new Dimension(1080, 720));
 		setExtendedState(MAXIMIZED_BOTH);
 
-		setTitle("SupermercadoSystem");
+		setTitle("PowerTech System");
 
 		menuBar = new JMenuBar();
 		menuBar.setMargin(new Insets(0, 80, 0, 0));
@@ -91,8 +91,8 @@ public class PantallaPrincipal extends JFrame {
 		mnRegistros = new JMenu("Registros");
 		mnRegistros.setForeground(Color.BLACK);
 		mnRegistros.setMargin(new Insets(0, 80, 0, 0));
-		mnRegistros.setIconTextGap(40);
-		mnRegistros.setPreferredSize(new Dimension(272, 25));
+		mnRegistros.setIconTextGap(52);
+		mnRegistros.setPreferredSize(new Dimension(310, 25));
 		mnRegistros.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnRegistros.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/registros.png")));
 		mnRegistros.setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -102,7 +102,7 @@ public class PantallaPrincipal extends JFrame {
 		mntmClientes.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, InputEvent.CTRL_MASK));
 		mntmClientes.setHorizontalTextPosition(SwingConstants.LEADING);
 		mntmClientes.setMargin(new Insets(0, 65, 0, 0));
-		mntmClientes.setPreferredSize(new Dimension(269, 25));
+		mntmClientes.setPreferredSize(new Dimension(305, 25));
 		mntmClientes.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		mntmClientes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mntmClientes.setFont(new Font("Segoe UI", Font.BOLD, 12));
@@ -112,54 +112,60 @@ public class PantallaPrincipal extends JFrame {
 			}
 		});
 		mnRegistros.add(mntmClientes);
-
-		mntmHabitaciones = new JMenuItem("Habitaciones");
-		mntmHabitaciones.setHorizontalTextPosition(SwingConstants.LEADING);
-		mntmHabitaciones.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, InputEvent.CTRL_MASK));
-		mntmHabitaciones.setMargin(new Insets(0, 65, 0, 0));
-		mntmHabitaciones.setPreferredSize(new Dimension(269, 25));
-		mntmHabitaciones.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		mntmHabitaciones.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		mntmHabitaciones.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		mntmHabitaciones.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				abrirVentanaHabitacion();
-			}
-		});
-		mnRegistros.add(mntmHabitaciones);
-
-		mntmFuncionarios = new JMenuItem("Funcionarios");
-		mntmFuncionarios.setHorizontalTextPosition(SwingConstants.LEADING);
-		mntmFuncionarios.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F3, InputEvent.CTRL_MASK));
-		mntmFuncionarios.setMargin(new Insets(0, 65, 0, 0));
-		mntmFuncionarios.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		mntmFuncionarios.setPreferredSize(new Dimension(269, 25));
-		mntmFuncionarios.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		mntmFuncionarios.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		mntmFuncionarios.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				abrirVentanaFuncionario();
-			}
-		});
-		mnRegistros.add(mntmFuncionarios);
+		
+				mntmHabitaciones = new JMenuItem("Categoria");
+				mntmHabitaciones.setHorizontalTextPosition(SwingConstants.LEADING);
+				mntmHabitaciones.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F3, InputEvent.CTRL_DOWN_MASK));
+				mntmHabitaciones.setMargin(new Insets(0, 65, 0, 0));
+				mntmHabitaciones.setPreferredSize(new Dimension(269, 25));
+				mntmHabitaciones.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+				mntmHabitaciones.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+				mntmHabitaciones.setFont(new Font("Segoe UI", Font.BOLD, 12));
+				mntmHabitaciones.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						abrirVentanaHabitacion();
+					}
+				});
+				
+						mntmFuncionarios = new JMenuItem("Funcionarios");
+						mntmFuncionarios.setHorizontalTextPosition(SwingConstants.LEADING);
+						mntmFuncionarios.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, InputEvent.CTRL_DOWN_MASK));
+						mntmFuncionarios.setMargin(new Insets(0, 65, 0, 0));
+						mntmFuncionarios.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+						mntmFuncionarios.setPreferredSize(new Dimension(269, 25));
+						mntmFuncionarios.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+						mntmFuncionarios.setFont(new Font("Segoe UI", Font.BOLD, 12));
+						mntmFuncionarios.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								abrirVentanaFuncionario();
+							}
+						});
+						mnRegistros.add(mntmFuncionarios);
+				mnRegistros.add(mntmHabitaciones);
+		
+		JMenuItem mntmProductos = new JMenuItem("Productos");
+		mntmProductos.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, InputEvent.CTRL_DOWN_MASK));
+		mntmProductos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		mntmProductos.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		mnRegistros.add(mntmProductos);
 
 		mnMovimientos = new JMenu("Movimientos");
 		mnMovimientos.setForeground(Color.BLACK);
-		mnMovimientos.setIconTextGap(40);
+		mnMovimientos.setIconTextGap(55);
 		mnMovimientos.setMargin(new Insets(0, 80, 0, 0));
-		mnMovimientos.setPreferredSize(new Dimension(272, 22));
+		mnMovimientos.setPreferredSize(new Dimension(310, 22));
 		mnMovimientos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnMovimientos.setHorizontalAlignment(SwingConstants.TRAILING);
 		mnMovimientos.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/movimientos.png")));
 		mnMovimientos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		menuBar.add(mnMovimientos);
 
-		mntmReservas_1 = new JMenuItem("Reservas");
+		mntmReservas_1 = new JMenuItem("Ventas");
 		mntmReservas_1.setHorizontalTextPosition(SwingConstants.LEADING);
-		mntmReservas_1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, InputEvent.CTRL_MASK));
+		mntmReservas_1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F5, InputEvent.CTRL_DOWN_MASK));
 		mnMovimientos.add(mntmReservas_1);
 		mntmReservas_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		mntmReservas_1.setPreferredSize(new Dimension(269, 25));
+		mntmReservas_1.setPreferredSize(new Dimension(305, 25));
 		mntmReservas_1.setMargin(new Insets(0, 65, 0, 0));
 		mntmReservas_1.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		mntmReservas_1.setFocusPainted(true);
@@ -170,10 +176,10 @@ public class PantallaPrincipal extends JFrame {
 			}
 		});
 
-		mntmPago = new JMenuItem("Pago");
+		mntmPago = new JMenuItem("Pagos");
 		mntmPago.setHorizontalTextPosition(SwingConstants.LEADING);
 		mntmPago.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		mntmPago.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F5, InputEvent.CTRL_MASK));
+		mntmPago.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F6, InputEvent.CTRL_DOWN_MASK));
 		mntmPago.setMargin(new Insets(0, 80, 0, 0));
 		mntmPago.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		mntmPago.setPreferredSize(new Dimension(269, 25));
@@ -187,9 +193,9 @@ public class PantallaPrincipal extends JFrame {
 
 		mnListados = new JMenu("Listados");
 		mnListados.setForeground(Color.BLACK);
-		mnListados.setIconTextGap(40);
+		mnListados.setIconTextGap(55);
 		mnListados.setMargin(new Insets(0, 80, 0, 0));
-		mnListados.setPreferredSize(new Dimension(272, 22));
+		mnListados.setPreferredSize(new Dimension(305, 22));
 		mnListados.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnListados.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/listados.png")));
 		mnListados.setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -198,9 +204,9 @@ public class PantallaPrincipal extends JFrame {
 		mntmClientesL = new JMenuItem("Clientes");
 		mntmClientesL.setHorizontalTextPosition(SwingConstants.LEADING);
 		mntmClientesL.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		mntmClientesL.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F6, InputEvent.CTRL_MASK));
+		mntmClientesL.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F7, InputEvent.CTRL_DOWN_MASK));
 		mntmClientesL.setMargin(new Insets(0, 65, 0, 0));
-		mntmClientesL.setPreferredSize(new Dimension(269, 25));
+		mntmClientesL.setPreferredSize(new Dimension(305, 25));
 		mntmClientesL.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		mntmClientesL.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnListados.add(mntmClientesL);
@@ -209,55 +215,61 @@ public class PantallaPrincipal extends JFrame {
 				abrirVentanaListadoCliente();
 			}
 		});
+		
+				mntmFuncionarioL = new JMenuItem("Funcionario");
+				mntmFuncionarioL.setHorizontalTextPosition(SwingConstants.LEADING);
+				mntmFuncionarioL.setFont(new Font("Segoe UI", Font.BOLD, 12));
+				mntmFuncionarioL.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F8, InputEvent.CTRL_MASK));
+				mntmFuncionarioL.setMargin(new Insets(0, 65, 0, 0));
+				mntmFuncionarioL.setPreferredSize(new Dimension(269, 25));
+				mntmFuncionarioL.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+				mntmFuncionarioL.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+				mnListados.add(mntmFuncionarioL);
+				
+						mntmFuncionarioL.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								abrirVentanaListadoFuncionario();
+							}
+						});
 
-		mntmHabitacionesL = new JMenuItem("Habitaciones");
+		mntmHabitacionesL = new JMenuItem("Categorias");
 		mntmHabitacionesL.setHorizontalTextPosition(SwingConstants.LEADING);
 		mntmHabitacionesL.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		mntmHabitacionesL.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F7, InputEvent.CTRL_MASK));
+		mntmHabitacionesL.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F9, InputEvent.CTRL_DOWN_MASK));
 		mntmHabitacionesL.setMargin(new Insets(0, 65, 0, 0));
 		mntmHabitacionesL.setPreferredSize(new Dimension(269, 25));
 		mntmHabitacionesL.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		mntmHabitacionesL.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnListados.add(mntmHabitacionesL);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Productos");
+		mntmNewMenuItem_1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F10, InputEvent.CTRL_DOWN_MASK));
+		mntmNewMenuItem_1.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		mntmNewMenuItem_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		mnListados.add(mntmNewMenuItem_1);
 		mntmHabitacionesL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				abrirVentanaListadoHabitacion();
 			}
 		});
 
-		mntmFuncionarioL = new JMenuItem("Funcionario");
-		mntmFuncionarioL.setHorizontalTextPosition(SwingConstants.LEADING);
-		mntmFuncionarioL.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		mntmFuncionarioL.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F8, InputEvent.CTRL_MASK));
-		mntmFuncionarioL.setMargin(new Insets(0, 65, 0, 0));
-		mntmFuncionarioL.setPreferredSize(new Dimension(269, 25));
-		mntmFuncionarioL.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		mntmFuncionarioL.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		mnListados.add(mntmFuncionarioL);
-
-		mntmFuncionarioL.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				abrirVentanaListadoFuncionario();
-			}
-		});
-
 		mnInformes = new JMenu("Informes");
 		mnInformes.setForeground(Color.BLACK);
-		mnInformes.setIconTextGap(45);
+		mnInformes.setIconTextGap(55);
 		mnInformes.setMargin(new Insets(0, 80, 0, 0));
-		mnInformes.setPreferredSize(new Dimension(272, 30));
+		mnInformes.setPreferredSize(new Dimension(305, 30));
 		mnInformes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnInformes.setHorizontalAlignment(SwingConstants.TRAILING);
 		mnInformes.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/informes.png")));
 		mnInformes.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		menuBar.add(mnInformes);
 
-		mntmReservas = new JMenuItem("Reservas");
+		mntmReservas = new JMenuItem("Ventas");
 		mntmReservas.setHorizontalTextPosition(SwingConstants.LEADING);
 		mntmReservas.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		mntmReservas.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F9, InputEvent.CTRL_MASK));
+		mntmReservas.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F11, InputEvent.CTRL_DOWN_MASK));
 		mntmReservas.setMargin(new Insets(0, 75, 0, 0));
-		mntmReservas.setPreferredSize(new Dimension(269, 25));
+		mntmReservas.setPreferredSize(new Dimension(305, 25));
 		mntmReservas.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		mntmReservas.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnInformes.add(mntmReservas);
@@ -270,7 +282,7 @@ public class PantallaPrincipal extends JFrame {
 		mntmPagos = new JMenuItem("Pagos");
 		mntmPagos.setHorizontalTextPosition(SwingConstants.LEADING);
 		mntmPagos.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		mntmPagos.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F10, InputEvent.CTRL_MASK));
+		mntmPagos.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F12, InputEvent.CTRL_DOWN_MASK));
 		mntmPagos.setMargin(new Insets(0, 75, 0, 0));
 		mntmPagos.setPreferredSize(new Dimension(269, 25));
 		mntmPagos.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -284,9 +296,9 @@ public class PantallaPrincipal extends JFrame {
 
 		mnUtilidades = new JMenu("Utilidades");
 		mnUtilidades.setForeground(Color.BLACK);
-		mnUtilidades.setIconTextGap(45);
+		mnUtilidades.setIconTextGap(55);
 		mnUtilidades.setMargin(new Insets(0, 80, 0, 0));
-		mnUtilidades.setPreferredSize(new Dimension(272, 22));
+		mnUtilidades.setPreferredSize(new Dimension(305, 22));
 		mnUtilidades.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnUtilidades.setHorizontalAlignment(SwingConstants.TRAILING);
 		mnUtilidades.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/utilidades.png")));
@@ -294,6 +306,7 @@ public class PantallaPrincipal extends JFrame {
 		menuBar.add(mnUtilidades);
 
 		mntmInicializacionDeDatos = new JMenuItem("Inicializacion de datos");
+		mntmInicializacionDeDatos.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_DOWN_MASK | InputEvent.ALT_DOWN_MASK | InputEvent.SHIFT_DOWN_MASK));
 		mntmInicializacionDeDatos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				inicializarBaseDatos();
@@ -303,17 +316,9 @@ public class PantallaPrincipal extends JFrame {
 		mntmInicializacionDeDatos.setMargin(new Insets(0, 35, 0, 0));
 		mntmInicializacionDeDatos
 				.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		mntmInicializacionDeDatos.setPreferredSize(new Dimension(269, 25));
+		mntmInicializacionDeDatos.setPreferredSize(new Dimension(305, 25));
 		mntmInicializacionDeDatos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mnUtilidades.add(mntmInicializacionDeDatos);
-
-		mntmSoporteTecnico = new JMenuItem("Soporte Tecnico");
-		mntmSoporteTecnico.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		mntmSoporteTecnico.setPreferredSize(new Dimension(269, 25));
-		mntmSoporteTecnico.setMargin(new Insets(0, 35, 0, 0));
-		mntmSoporteTecnico.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		mntmSoporteTecnico.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		mnUtilidades.add(mntmSoporteTecnico);
 
 		contentPane = new jPanelPantallaPrincipal();
 		contentPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
@@ -327,14 +332,13 @@ public class PantallaPrincipal extends JFrame {
 				abrirVentanaPago();
 			}
 		});
-		btnsprncplsPagos.setBounds(20, 287, 120, 93);
+		btnsprncplsPagos.setBounds(26, 337, 120, 93);
 		btnsprncplsPagos.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnsprncplsPagos.setText("Pagos");
 		contentPane.add(btnsprncplsPagos);
 
 		JButton btnsprncplsSalir = new JButton();
-		btnsprncplsSalir
-				.setIcon(new ImageIcon(PantallaPrincipal.class.getClass().getResource("/supermercadoSystem/img/cerrar.png")));
+		btnsprncplsSalir.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/cerrar.png")));
 		btnsprncplsSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnsprncplsSalir.setSize(130, 70);
 		btnsprncplsSalir.setForeground(Color.BLACK);
@@ -349,7 +353,7 @@ public class PantallaPrincipal extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnsprncplsSalir.setBounds(1223, 548, 120, 93);
+		btnsprncplsSalir.setBounds(1345, 616, 120, 93);
 		btnsprncplsSalir.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnsprncplsSalir.setText("Salir ");
 		contentPane.add(btnsprncplsSalir);
@@ -361,7 +365,7 @@ public class PantallaPrincipal extends JFrame {
 				abrirVentanaReserva();
 			}
 		});
-		btnsprncplsReservas.setBounds(20, 432, 120, 93);
+		btnsprncplsReservas.setBounds(26, 482, 120, 93);
 		btnsprncplsReservas.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnsprncplsReservas.setText("Reservas");
 		contentPane.add(btnsprncplsReservas);
@@ -373,7 +377,7 @@ public class PantallaPrincipal extends JFrame {
 				abrirVentanaCliente();
 			}
 		});
-		btnsprncplsClientes.setBounds(20, 139, 120, 93);
+		btnsprncplsClientes.setBounds(26, 189, 120, 93);
 		btnsprncplsClientes.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnsprncplsClientes.setText("Clientes");
 		contentPane.add(btnsprncplsClientes);
@@ -468,5 +472,4 @@ public class PantallaPrincipal extends JFrame {
 			reservaDao.commit();
 		}
 	}
-
 }
