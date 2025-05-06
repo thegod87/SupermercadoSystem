@@ -359,6 +359,7 @@ public class PantallaPrincipal extends JFrame {
 		contentPane.add(btnsprncplsSalir);
 
 		BotonesPrincipales btnsprncplsReservas = new BotonesPrincipales();
+		btnsprncplsReservas.setIcon(new ImageIcon(PantallaPrincipal.class.getResource("/supermercadoSystem/img/venta.png")));
 		btnsprncplsReservas.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnsprncplsReservas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -367,7 +368,7 @@ public class PantallaPrincipal extends JFrame {
 		});
 		btnsprncplsReservas.setBounds(26, 482, 120, 93);
 		btnsprncplsReservas.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnsprncplsReservas.setText("Reservas");
+		btnsprncplsReservas.setText("Ventas");
 		contentPane.add(btnsprncplsReservas);
 
 		BotonesPrincipales btnsprncplsClientes = new BotonesPrincipales();
